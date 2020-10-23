@@ -1,0 +1,56 @@
+<h1>Aso API Stress Test</h1>
+
+<div class="wrapper">
+    <div class="inner-wrapper configuration">
+        <h2>Configuration</h2>
+        <label>Test API: </label>
+        <select class="select" [(ngModel)]="url" [disabled]="isTetsing">
+            <option *ngFor="let url of apiList" [value]="url">{{ url }}</option>
+        </select>
+        <br><br>
+
+        <label>Duration (ms): </label>
+        <select [(ngModel)]="duration" [disabled]="isTetsing">
+            <option *ngFor="let sec of durationOption" [value]="sec">{{ sec }}</option>
+        </select>
+        <br><br>
+
+        <label>Number at once: </label>
+        <input [(ngModel)]="number" [disabled]="isTetsing" autocomplete="off">
+        <br><br>
+
+        <label>Max API number: </label>
+        <input [(ngModel)]="max" [disabled]="isTetsing" autocomplete="off">
+        <br><br>
+
+        <button type="button" [disabled]="isTetsing" (click)="start()">Start</button>
+        <button type="button" [disabled]="!isTetsing" (click)="stop()">Stop</button>
+    </div>
+    <div class="inner-wrapper">
+        <h2>Monitoring</h2>
+        <h3>Status: {{ isTetsing ? 'Testing...' : 'Standing by' }}</h3>
+        <h3>Total API calls: {{ apiService.counter }}</h3>
+        <h3>Success: {{ apiService.success }}</h3>
+        <h3>Failure: {{ apiService.failure }}</h3>
+    </div>
+    <div class="inner-wrapper">
+        <h2>Analysis</h2>
+        <h3>Average taken time</h3>
+        <!-- <button type="button" [disabled]="isTetsing" (click)="loadChart()">Load chart</button> -->
+        <ngx-charts-bar-vertical
+        *ngIf="averageTime"
+        [view]="view"
+        [scheme]="colorScheme"
+        [results]="averageTime"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel">
+        </ngx-charts-bar-vertical>
+    </div>
+</div>
+
