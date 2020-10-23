@@ -122,12 +122,10 @@ export class ApiService {
     request.onsuccess = event => {
       console.log('createDB onsuccess');
       this.db = event.target['result'];
-      try {
-        this.getHistory();
-      } catch (error) {
+      this.getHistory().catch(() => {
         this.db.close();
         this.updateDB(this.db.version + 1);
-      }
+      })
     }
   }
 
