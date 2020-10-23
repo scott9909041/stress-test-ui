@@ -22,10 +22,12 @@ export class AppComponent {
     'https://pos2dev.aso.com.tw/api/v2/shops',
     'https://pos2dev.aso.com.tw/api/v2/members?size=10&page=1&mobile=0900000000',
     'https://pos2dev.aso.com.tw/api/v2/members/CU170200001746',
-    'https://pos2dev.aso.com.tw/api/v2/products?size=10&page=1&simple=14291'
+    'https://pos2dev.aso.com.tw/api/v2/products?size=10&page=1&simple=14291',
+    'https://pos2dev.aso.com.tw/api/v2/products?size=10&page=1&simple=29344',
+    'https://pos2dev.aso.com.tw/api/v2/prices/1002900034422'
   ]
 
-  durationOption = [500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000];
+  durationOption = [500, 1000, 1500, 2000, 3000, 4000, 5000];
 
   /**
    * 
