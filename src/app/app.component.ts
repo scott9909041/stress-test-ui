@@ -24,7 +24,8 @@ export class AppComponent {
     'https://pos2dev.aso.com.tw/api/v2/members/CU170200001746',
     'https://pos2dev.aso.com.tw/api/v2/products?size=10&page=1&simple=14291',
     'https://pos2dev.aso.com.tw/api/v2/products?size=10&page=1&simple=29344',
-    'https://pos2dev.aso.com.tw/api/v2/prices/1002900034422'
+    'https://pos2dev.aso.com.tw/api/v2/prices/1002900034422',
+    'https://sit.starpos.cc/login'
   ]
 
   durationOption = [500, 1000, 1500, 2000, 3000, 4000, 5000];
